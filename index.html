@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylepassenger.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Passenger</h1>
+        <h2 id="count">0</h2>
+        <button id="increment" class="in">Increment</button>
+        <button id="reset" class="in">Reset</button>
+        <button id="save" class="in">Save</button>
+        <p id="saveele">previous element:</p>
+    </div>
+
+    <script>
+        let count = document.getElementById('count').innerText
+        let countInt = parseInt(count)
+        let button = document.getElementById('increment')
+
+        button.addEventListener('click', function () {
+            countInt += 1
+            document.getElementById('count').innerText = countInt
+        })
+        let reset = document.getElementById('reset')
+        reset.addEventListener('click', function () {
+            countInt = 0
+            document.getElementById('count').innerText = countInt
+        })
+        let saveele = document.getElementById('saveele')
+        let save = document.getElementById('save')
+        save.addEventListener('click', function () {
+            let abc = countInt + '-'
+            saveele.textContent += abc
+
+        })
+    </script>
+</body>
+
+</html>
